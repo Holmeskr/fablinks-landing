@@ -1,105 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FABLINKS | Fabric Supplier from Korea</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fdfdfd;
-      color: #333;
-      line-height: 1.6;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Pinterest domain verification -->
+<meta name="p:domain_verify" content="583bbbbf266bc6b9377e93c6bc9548b6"/>
+
+<!-- ============ SEO ============ -->
+<title>FABLINKS — Korean Bridal &amp; Evening Dress Fabric Supplier</title>
+<meta name="description" content="FABLINKS sources and supplies bridal, bridesmaid and evening dress fabric from Korea — woven, knit, jacquard, print, lace. Trusted by leading global dress brands since 1994. Stock &amp; deadstock available for immediate inquiry.">
+<meta name="keywords" content="Korean bridal fabric, evening dress fabric supplier, bridesmaid fabric, wedding fabric Korea, deadstock fabric, stock fabric, jacquard, lace, satin, organza, fabric sourcing Korea">
+<link rel="canonical" href="http://fablinks.co.kr/">
+
+<!-- Open Graph (for link previews on WhatsApp / social) -->
+<meta property="og:title" content="FABLINKS — Korean Bridal &amp; Evening Dress Fabric">
+<meta property="og:description" content="Bridal, evening and party dress fabric, curated from Korea since 1994. Stock &amp; deadstock available.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://fablinks.co.kr/">
+<meta property="og:image" content="http://fablinks.co.kr/images/og-cover.webp">
+
+<!-- Structured data: tells Google this is a real supplier -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FABLINKS Co., Ltd.",
+  "url": "http://fablinks.co.kr/",
+  "foundingDate": "2005",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Sinyang Globiz Co., Ltd. (SINTEX)",
+    "foundingDate": "1994"
+  },
+  "description": "Korean supplier and global sourcing partner for bridal, bridesmaid and evening dress fabric.",
+  "knowsAbout": ["Bridal fabric", "Evening dress fabric", "Jacquard", "Lace", "Satin", "Organza", "Fabric sourcing"],
+  "areaServed": "Worldwide"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* ---- palette: drawn from fabric, not the usual AI cream/terracotta ----
+       a quiet "atelier" scheme: warm paper, deep aubergine ink,
+       a single dusty-rose thread accent pulled from bridal swatches */
+    --paper:      #F6F3EF;   /* soft unbleached muslin */
+    --paper-2:    #EEE9E2;   /* slightly deeper for section breaks */
+    --ink:        #2A2227;   /* near-black aubergine, softer than pure black */
+    --ink-soft:   #6B5F63;   /* muted text */
+    --thread:     #B47B74;   /* dusty rose — the one accent */
+    --thread-dim: #D8B8B2;
+    --line:       #DBD3CA;   /* hairline */
+    --gold:       #A98C5A;   /* restrained metallic, for "running" badge */
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 28px; }
+
+  /* ---------- typographic system ---------- */
+  .display{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:340;
+    line-height:1.04;
+    letter-spacing:-0.015em;
+  }
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--thread);
+    font-weight:600;
+  }
+
+  /* =========================================================
+     HEADER
+     ========================================================= */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,243,239,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .brand{
+    font-family:'Fraunces',serif;
+    font-size:22px; font-weight:500; letter-spacing:0.04em;
+  }
+  .brand span{ color:var(--thread); }
+  .nav-links{ display:flex; gap:30px; align-items:center; }
+  .nav-links a{
+    color:var(--ink-soft); text-decoration:none;
+    font-size:13.5px; letter-spacing:0.02em;
+    transition:color .2s;
+  }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-cta{
+    border:1px solid var(--ink); color:var(--ink);
+    padding:9px 18px; border-radius:2px;
+    font-size:13px; letter-spacing:0.04em;
+  }
+  .nav-cta:hover{ background:var(--ink); color:var(--paper)!important; }
+  .nav-toggle{ display:none; background:none; border:0; font-size:24px; color:var(--ink); cursor:pointer; }
+
+  /* =========================================================
+     HERO  — the swatch is the hero
+     ========================================================= */
+  .hero{ padding:88px 0 76px; position:relative; overflow:hidden; }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:54px; align-items:center;
+  }
+  .hero h1{ font-size:clamp(38px,6vw,68px); margin-bottom:24px; }
+  .hero h1 em{ font-style:italic; color:var(--thread); }
+  .hero p.lead{
+    font-size:17px; color:var(--ink-soft); max-width:440px; margin-bottom:34px;
+  }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px; border-radius:2px;
+    font-size:14px; letter-spacing:0.03em; text-decoration:none;
+    transition:all .2s; cursor:pointer; border:1px solid transparent;
+  }
+  .btn-primary{ background:var(--ink); color:var(--paper); }
+  .btn-primary:hover{ background:var(--thread); }
+  .btn-ghost{ border-color:var(--ink); color:var(--ink); }
+  .btn-ghost:hover{ background:var(--ink); color:var(--paper); }
+
+  /* hero swatch stack — pure CSS textile feel, no image needed */
+  .swatch-stack{ position:relative; height:380px; }
+  .swatch{
+    position:absolute; border-radius:3px; overflow:hidden;
+    box-shadow:0 18px 40px -22px rgba(42,34,39,0.45);
+    background-size:cover; background-position:center;
+  }
+  .swatch.s1{ width:230px; height:300px; left:40px; top:0;
+    background:
+      repeating-linear-gradient(135deg,#e9d4cf 0 8px,#e3c9c3 8px 16px),
+      linear-gradient(160deg,#e8d2cd,#d9b6af);
+    transform:rotate(-5deg); z-index:2; }
+  .swatch.s2{ width:180px; height:230px; right:6px; top:36px;
+    background:
+      repeating-linear-gradient(45deg,#efe7da 0 6px,#e7dccb 6px 12px);
+    transform:rotate(6deg); z-index:1; }
+  .swatch.s3{ width:150px; height:150px; left:0; bottom:0;
+    background:
+      radial-gradient(circle at 30% 30%,#cbb486,#9c8456);
+    transform:rotate(-3deg); z-index:3; }
+  .swatch-label{
+    position:absolute; bottom:10px; left:12px;
+    font-size:10px; letter-spacing:0.18em; text-transform:uppercase;
+    color:rgba(255,255,255,0.92); text-shadow:0 1px 4px rgba(0,0,0,.3);
+  }
+  /* if you later drop in real WEBP, add e.g.
+     .swatch.s1{ background-image:url('images/hero-satin.webp'); } */
+
+  .hero-since{
+    margin-top:18px; font-size:13px; color:var(--ink-soft);
+    letter-spacing:0.04em;
+  }
+
+  /* =========================================================
+     MARQUEE / BUYERS
+     ========================================================= */
+  .buyers{ padding:40px 0 50px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .buyers .eyebrow{ text-align:center; display:block; margin-bottom:26px; }
+  .buyer-row{
+    display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+    gap:18px 46px;
+  }
+  .buyer-name{
+    font-family:'Fraunces',serif; font-size:19px; color:var(--ink);
+    opacity:0.62; letter-spacing:0.02em; white-space:nowrap;
+    transition:opacity .2s;
+  }
+  .buyer-name:hover{ opacity:1; }
+  .buyers-note{ text-align:center; margin-top:20px; font-size:12px; color:var(--ink-soft); }
+
+  /* ---------- trust strip ---------- */
+  .trust-strip{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:30px 0; }
+  .trust-inner{ display:flex; justify-content:space-between; gap:30px; }
+  .trust-item{ flex:1; }
+  .trust-item b{ font-family:'Fraunces',serif; font-weight:500; font-size:16px; display:block; margin-bottom:3px; }
+  .trust-item span{ font-size:13px; color:var(--ink-soft); }
+
+  /* =========================================================
+     SECTION SHELL
+     ========================================================= */
+  section.block{ padding:84px 0; }
+  .block.alt{ background:var(--paper-2); }
+  .sec-head{ max-width:620px; margin-bottom:48px; }
+  .sec-head h2{ font-size:clamp(28px,4vw,42px); margin:14px 0 16px; }
+  .sec-head p{ color:var(--ink-soft); font-size:16px; }
+
+  /* ---- categories ---- */
+  .cat-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .cat{
+    background:var(--paper); border:1px solid var(--line);
+    border-radius:4px; padding:30px 26px; position:relative;
+    transition:transform .25s, box-shadow .25s;
+  }
+  .block.alt .cat{ background:#fff; }
+  .cat:hover{ transform:translateY(-4px); box-shadow:0 20px 38px -26px rgba(42,34,39,.4); }
+  .cat-no{ font-family:'Fraunces',serif; font-size:13px; color:var(--thread); letter-spacing:0.1em; }
+  .cat h3{ font-family:'Fraunces',serif; font-weight:500; font-size:24px; margin:10px 0 14px; }
+  .cat ul{ list-style:none; }
+  .cat li{ font-size:14px; color:var(--ink-soft); padding:5px 0; border-bottom:1px dashed var(--line); }
+  .cat li:last-child{ border-bottom:0; }
+  .cat .types{ margin-top:16px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--thread); }
+
+  /* =========================================================
+     STOCK SERVICE  (the cash-flow section)
+     ========================================================= */
+  #stock{ position:relative; }
+  .stock-head{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px; margin-bottom:40px; }
+  .stock-head .sec-head{ margin-bottom:0; }
+  .stock-filter{ display:flex; gap:8px; }
+  .chip{
+    border:1px solid var(--line); background:transparent;
+    padding:8px 16px; border-radius:30px; font-size:12.5px;
+    color:var(--ink-soft); cursor:pointer; letter-spacing:0.03em;
+    font-family:inherit; transition:all .18s;
+  }
+  .chip.active{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+
+  .stock-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .scard{
+    background:#fff; border:1px solid var(--line); border-radius:4px;
+    overflow:hidden; display:flex; flex-direction:column;
+    transition:transform .22s, box-shadow .22s;
+  }
+  .scard:hover{ transform:translateY(-4px); box-shadow:0 22px 40px -28px rgba(42,34,39,.45); }
+  .scard-img{
+    aspect-ratio:4/3; background:var(--paper-2);
+    position:relative; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .scard-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .scard-img .ph{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#b9aea3; }
+  .badge{
+    position:absolute; top:12px; left:12px; z-index:2;
+    font-size:10px; letter-spacing:0.12em; text-transform:uppercase;
+    padding:5px 10px; border-radius:30px; font-weight:600;
+    background:var(--thread); color:#fff;
+  }
+  .badge.running{ background:var(--gold); }
+  .scard-body{ padding:18px 18px 20px; display:flex; flex-direction:column; flex:1; }
+  .scard h4{ font-family:'Fraunces',serif; font-weight:500; font-size:18px; margin-bottom:10px; }
+  .scard .spec{ font-size:13px; color:var(--ink-soft); line-height:1.7; flex:1; }
+  .scard .spec b{ color:var(--ink); font-weight:500; }
+  .scard .note{ font-size:12.5px; color:var(--thread); margin-top:8px; font-style:italic; }
+  .scard .inq{
+    margin-top:16px; text-align:center; text-decoration:none;
+    border:1px solid var(--ink); color:var(--ink);
+    padding:10px; border-radius:2px; font-size:13px; letter-spacing:0.04em;
+    transition:all .18s;
+  }
+  .scard .inq:hover{ background:var(--ink); color:#fff; }
+  .stock-empty{ grid-column:1/-1; text-align:center; color:var(--ink-soft); padding:40px; font-size:14px; }
+  .stock-foot{ margin-top:30px; font-size:13px; color:var(--ink-soft); }
+  .stock-more{ margin-top:40px; padding-top:32px; border-top:1px solid var(--line); text-align:center; }
+  .stock-more-label{ font-family:'Fraunces',serif; font-size:18px; margin-bottom:18px; }
+  .stock-more-btns{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+  /* =========================================================
+     SOURCING (light trust, no factory claims)
+     ========================================================= */
+  .src-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
+  .src h3{ font-family:'Fraunces',serif; font-weight:500; font-size:20px; margin-bottom:10px; }
+  .src h3 .n{ color:var(--thread); font-size:14px; margin-right:8px; }
+  .src p{ font-size:14px; color:var(--ink-soft); }
+
+  /* =========================================================
+     INQUIRY
+     ========================================================= */
+  #inquiry{ background:var(--ink); color:var(--paper); }
+  #inquiry .eyebrow{ color:var(--thread-dim); }
+  #inquiry h2{ color:var(--paper); font-size:clamp(30px,4.5vw,48px); }
+  .inq-grid{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+  .inq-left p{ color:#cfc6c0; font-size:16px; margin:18px 0 30px; max-width:380px; }
+  .inq-channels a{
+    display:flex; align-items:center; gap:14px;
+    color:var(--paper); text-decoration:none;
+    padding:16px 0; border-bottom:1px solid rgba(255,255,255,.14);
+    font-size:15px; transition:padding .2s;
+  }
+  .inq-channels a:hover{ padding-left:8px; color:var(--thread-dim); }
+  .inq-channels .ch-label{ font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#9b8f8a; min-width:90px; }
+  .inq-form{ display:flex; flex-direction:column; gap:14px; }
+  .inq-form input, .inq-form textarea{
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.18);
+    color:var(--paper); padding:13px 15px; border-radius:2px;
+    font-family:inherit; font-size:14px;
+  }
+  .inq-form input::placeholder, .inq-form textarea::placeholder{ color:#9b8f8a; }
+  .inq-form input:focus, .inq-form textarea:focus{ outline:none; border-color:var(--thread); }
+  .inq-form button{
+    background:var(--thread); color:#fff; border:0; padding:15px;
+    border-radius:2px; font-family:inherit; font-size:14px; letter-spacing:0.04em;
+    cursor:pointer; transition:background .2s;
+  }
+  .inq-form button:hover{ background:var(--thread-dim); color:var(--ink); }
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  footer{ background:var(--paper-2); padding:48px 0 40px; border-top:1px solid var(--line); }
+  .foot-grid{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; }
+  .foot-brand{ font-family:'Fraunces',serif; font-size:20px; }
+  .foot-brand span{ color:var(--thread); }
+  .foot-col h5{ font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--thread); margin-bottom:12px; }
+  .foot-col a, .foot-col p{ display:block; color:var(--ink-soft); font-size:13.5px; text-decoration:none; padding:3px 0; }
+  .foot-col a:hover{ color:var(--ink); }
+  .foot-bottom{ margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font-size:12px; color:var(--ink-soft); }
+
+  /* =========================================================
+     RESPONSIVE
+     ========================================================= */
+  @media(max-width:880px){
+    .hero-grid{ grid-template-columns:1fr; gap:40px; }
+    .swatch-stack{ height:320px; margin:0 auto; max-width:380px; }
+    .cat-grid,.stock-grid,.src-grid,.inq-grid{ grid-template-columns:1fr; gap:18px; }
+    .src-grid{ gap:30px; }
+    .trust-inner{ flex-direction:column; gap:18px; }
+    .nav-links{
+      display:none; position:absolute; top:64px; left:0; right:0;
+      flex-direction:column; gap:0; background:var(--paper);
+      border-bottom:1px solid var(--line); padding:8px 0;
     }
-    header {
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-    header p {
-      font-size: 1rem;
-      color: #555;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    section {
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    h2 {
-      font-size: 1.2rem;
-      margin-top: 30px;
-      color: #222;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
-    }
-    .contact-info {
-      font-size: 0.95rem;
-      color: #444;
-      margin-bottom: 10px;
-    }
-    .buttons {
-      text-align: center;
-      margin: 8px 0;
-    }
-    .buttons a {
-      display: inline-block;
-      padding: 12px 20px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: bold;
-      background: #222;
-      color: #fff;
-      text-align: center;
-      transition: background 0.3s;
-      margin: 5px 0;
-    }
-    .buttons a:hover {
-      background: #555;
-    }
-    footer {
-      margin-top: 50px;
-      font-size: 0.8rem;
-      color: #888;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
+    .nav-links.open{ display:flex; }
+    .nav-links a{ padding:14px 28px; width:100%; }
+    .nav-toggle{ display:block; }
+  }
+  @media(max-width:560px){
+    .stock-grid{ grid-template-columns:1fr; }
+    .stock-head{ flex-direction:column; align-items:flex-start; }
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{ scroll-behavior:auto; transition:none!important; }
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>FABLINKS</h1>
-    <p>
-      Fablinks was originally established in 2005, evolved from “Silkentop,” 
-      and created by combining “Fabric” and “Links.”  
-      While SINTEX (Sinyang Globiz since 1994) mainly focused on bridal, bridesmaid, mother of bride, 
-      and some prom & evening dresses, Fablinks expanded into fancy items such as pleats, burnout, 
-      glitters, foil, velvet, and party/afternoon/evening dresses that are less common in Korea. 
-    </p>
-  </header>
 
-  <section>
-    <h2>Contact – Sinyang Globiz Co., Ltd. (Brand: SINTEX)</h2>
-    <div class="contact-info">☎️ Tel: +82 2 3775 0684</div>
-    <div class="buttons"><a href="https://www.sintex.co.kr" target="_blank">🌐 Visit SINTEX Website</a></div>
-    <div class="buttons"><a href="https://sinyangglobiz.myshopify.com" target="_blank">🛒 Fabric Catalog</a></div>
-    <div class="buttons"><a href="https://wa.me/82237750684" target="_blank">📲 WhatsApp (SINTEX)</a></div>
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">FAB<span>LINKS</span></div>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <nav class="nav-links" id="navlinks">
+      <a href="#collections">Collections</a>
+      <a href="#stock">Stock Service</a>
+      <a href="#sourcing">Sourcing</a>
+      <a href="#inquiry" class="nav-cta">Inquiry</a>
+    </nav>
+  </div>
+</header>
 
-    <h2>Contact – Fablinks Co., Ltd.</h2>
-    <div class="contact-info">☎️ Tel: +82 2 3775 4825</div>
-    <div class="buttons"><a href="https://www.instagram.com/fablinks.korea/" target="_blank">📸 Visit FABLINKS IG</a></div>
-    <div class="buttons"><a href="https://wa.me/82237754825" target="_blank">📲 WhatsApp (Fablinks)</a></div>
-  </section>
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Bridal · Evening · Curated from Korea</span>
+      <h1 class="display">Fabric the world's<br><em>dress makers</em> trust.</h1>
+      <p class="lead">A family-run Korean sourcing house for bridal, bridesmaid and evening dress fabric — woven, knit, jacquard, print and lace. Curating fabric with care since 1994.</p>
+      <div class="hero-actions">
+        <a href="#collections" class="btn btn-primary">View collections</a>
+        <a href="#stock" class="btn btn-ghost">Stock &amp; deadstock →</a>
+      </div>
+      <div class="hero-since">Sinyang Globiz (est. 1994) · Fablinks (est. 2005)</div>
+    </div>
+    <div class="swatch-stack" aria-hidden="true">
+      <div class="swatch s1"><span class="swatch-label">Bridal satin</span></div>
+      <div class="swatch s2"><span class="swatch-label">Organza</span></div>
+      <div class="swatch s3"><span class="swatch-label">Foil JQD</span></div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    © 2025 Fablinks Co., Ltd. | Powered by Sinyang Globiz (Since 1994)
-  </footer>
+<!-- ===================== TRUST STRIP (no brand names) ===================== -->
+<section class="trust-strip">
+  <div class="wrap trust-inner">
+    <div class="trust-item"><b>Since 1994</b><span>three decades in bridal &amp; evening fabric</span></div>
+    <div class="trust-item"><b>Family-run</b><span>a family business, working together since day one</span></div>
+    <div class="trust-item"><b>Sourcing reach</b><span>vetted mills across Korea &amp; Asia</span></div>
+  </div>
+</section>
+
+<!-- ===================== COLLECTIONS ===================== -->
+<section class="block" id="collections">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Collections</span>
+      <h2 class="display">Three markets, one source.</h2>
+      <p>From the structure of a bridal gown to the drape of an evening dress — woven, knit, jacquard and print, sourced to order or held in stock.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat">
+        <div class="cat-no">01</div>
+        <h3>Wedding</h3>
+        <ul><li>Bridal</li><li>Bridesmaid</li><li>Mother of the bride</li></ul>
+        <div class="types">Satin · Lace · Organza · JQD</div>
+      </div>
+      <div class="cat">
+        <div class="cat-no">02</div>
+        <h3>Dress</h3>
+        <ul><li>Evening dress</li><li>Prom dress</li><li>Party gown</li></ul>
+        <div class="types">Foil · Glitter · Pleats · Burnout</div>
+      </div>
+      <div class="cat">
+        <div class="cat-no">03</div>
+        <h3>Casual</h3>
+        <ul><li>Women's &amp; men's</li><li>Kids'</li><li>Sportswear</li></ul>
+        <div class="types">Woven · Knit · Print · Velvet</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RUNNING STOCK ===================== -->
+<section class="block alt" id="stock">
+  <div class="wrap">
+    <div class="stock-head">
+      <div class="sec-head">
+        <span class="eyebrow">Running Stock · Ready to ship</span>
+        <h2 class="display">Running stock,<br>available now.</h2>
+        <p>Running and limited-stock fabric from our programs — quick availability, small quantities welcome, no minimum development. Ideal for sample runs, small collections and capsule production.</p>
+      </div>
+      <div class="stock-filter">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="running">Running</button>
+        <button class="chip" data-filter="deadstock">Limited</button>
+      </div>
+    </div>
+
+    <div class="stock-grid" id="stockGrid"><!-- cards injected from stock-data.js --></div>
+
+    <p class="stock-foot">A selection of what's currently moving. Quantities and colors change often — for anything not shown here, or to check current availability, reach us by WhatsApp or email.</p>
+
+    <div class="stock-more">
+      <p class="stock-more-label">See more fabric &amp; new arrivals</p>
+      <div class="stock-more-btns">
+        <a href="https://www.instagram.com/fablinks.korea/" target="_blank" rel="noopener" class="btn btn-ghost">Instagram →</a>
+        <a href="https://www.pinterest.com/fablinkskoreafabric/" target="_blank" rel="noopener" class="btn btn-ghost">Pinterest →</a>
+        <a href="#inquiry" class="btn btn-primary">Inquire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOURCING ===================== -->
+<section class="block" id="sourcing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How we work</span>
+      <h2 class="display">A family business, since 1994.</h2>
+      <p>Founded in 1994 and run by our family ever since — three decades of relationships across mills and finishers in Korea and Asia, so you get the right hand-feel, color and lead time without managing the supply chain yourself.</p>
+    </div>
+    <div class="src-grid">
+      <div class="src">
+        <h3><span class="n">01</span>Curated sourcing</h3>
+        <p>We match your design intent to the right base — drape, weight, finish — across a vetted network built since 1994, with sourcing reach through Asia.</p>
+      </div>
+      <div class="src">
+        <h3><span class="n">02</span>Sampling on request</h3>
+        <p>Counter samples, S/O and lab dips to your standard, so you can confirm color and quality before committing to bulk.</p>
+      </div>
+      <div class="src">
+        <h3><span class="n">03</span>Stable supply</h3>
+        <p>Consistent lots and color management across repeat orders, backed by long-standing relationships built over thirty years.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INQUIRY ===================== -->
+<section class="block" id="inquiry">
+  <div class="wrap inq-grid">
+    <div class="inq-left">
+      <span class="eyebrow">Inquiry</span>
+      <h2 class="display">Tell us what you're making.</h2>
+      <p>Send your fabric requirement, a reference image, or ask what's currently in stock. We reply in English, fast.</p>
+      <div class="inq-channels">
+        <!-- EDIT these with your real handles -->
+        <a href="https://wa.me/82237754825" target="_blank" rel="noopener">
+          <span class="ch-label">WhatsApp</span> +82 2 3775 4825
+        </a>
+        <a href="mailto:holmes@fablinks.co.kr">
+          <span class="ch-label">Email</span> holmes@fablinks.co.kr
+        </a>
+        <a href="https://www.instagram.com/fablinks.korea/" target="_blank" rel="noopener">
+          <span class="ch-label">Instagram</span> @fablinks.korea
+        </a>
+      </div>
+    </div>
+    <div class="inq-right">
+      <!-- This form opens the user's mail app prefilled. No server needed. -->
+      <div class="inq-form">
+        <input type="text" id="f-name" placeholder="Your name / company">
+        <input type="email" id="f-email" placeholder="Email">
+        <input type="text" id="f-item" placeholder="Fabric you're looking for (e.g. ivory bridal satin)">
+        <textarea id="f-msg" rows="4" placeholder="Quantity, deadline, any details…"></textarea>
+        <button onclick="sendInquiry()">Send inquiry</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-brand">FAB<span>LINKS</span></div>
+        <p style="margin-top:10px;max-width:260px">Korean bridal &amp; evening dress fabric, curated and supplied worldwide.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Fablinks Co., Ltd.</h5>
+        <a href="https://wa.me/82237754825">WhatsApp +82 2 3775 4825</a>
+        <a href="mailto:holmes@fablinks.co.kr">holmes@fablinks.co.kr</a>
+        <a href="https://www.instagram.com/fablinks.korea/">Instagram</a>
+        <a href="https://www.pinterest.com/fablinkskoreafabric/">Pinterest</a>
+      </div>
+      <div class="foot-col">
+        <h5>Sinyang Globiz (SINTEX)</h5>
+        <p>B2B · since 1994</p>
+        <a href="https://www.sintex.co.kr">sintex.co.kr</a>
+        <a href="https://wa.me/82237750684">WhatsApp +82 2 3775 0684</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Fablinks Co., Ltd. · A family business since 1994. All fabric designs and finishes are proprietary.</div>
+  </div>
+</footer>
+
+<script src="stock-data.js"></script>
+<script>
+  /* ---------- render stock cards from STOCK_ITEMS ---------- */
+  function renderStock(filter){
+    const grid = document.getElementById('stockGrid');
+    const items = (typeof STOCK_ITEMS !== 'undefined') ? STOCK_ITEMS : [];
+    const list = items.filter(it => filter==='all' || it.tag===filter);
+    if(!list.length){
+      grid.innerHTML = '<div class="stock-empty">No items in this category right now — message us for current availability.</div>';
+      return;
+    }
+    grid.innerHTML = list.map(it => {
+      const badge = it.tag==='running'
+        ? '<span class="badge running">Running</span>'
+        : '<span class="badge">Limited</span>';
+      const img = it.image
+        ? `<img src="images/${it.image}" alt="${it.name} — Korean ${it.tag} fabric" loading="lazy" width="400" height="300">`
+        : `<span class="ph">Image coming soon</span>`;
+      const note = it.note ? `<div class="note">${it.note}</div>` : '';
+      const weightRow = it.weight ? `<b>Weight</b> ${it.weight}<br>` : '';
+      const waText = encodeURIComponent(`Hi FABLINKS, I'm interested in the ${it.name} (${it.content}, ${it.width}). Could you share color, price and availability?`);
+      return `
+        <div class="scard">
+          <div class="scard-img">${badge}${img}</div>
+          <div class="scard-body">
+            <h4>${it.name}</h4>
+            <div class="spec">
+              <b>Width</b> ${it.width}<br>
+              <b>Content</b> ${it.content}<br>
+              ${weightRow}
+            </div>
+            ${note}
+            <a class="inq" href="https://wa.me/82237754825?text=${waText}" target="_blank" rel="noopener">Inquire</a>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  document.querySelectorAll('.chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      renderStock(chip.dataset.filter);
+    });
+  });
+  renderStock('all');
+
+  /* ---------- inquiry form → opens mail app prefilled ---------- */
+  function sendInquiry(){
+    const name=document.getElementById('f-name').value||'';
+    const email=document.getElementById('f-email').value||'';
+    const item=document.getElementById('f-item').value||'';
+    const msg=document.getElementById('f-msg').value||'';
+    const subject=encodeURIComponent('Fabric inquiry — '+(item||'FABLINKS'));
+    const body=encodeURIComponent(
+      `Name / Company: ${name}\nEmail: ${email}\nLooking for: ${item}\n\n${msg}`
+    );
+    window.location.href=`mailto:holmes@fablinks.co.kr?subject=${subject}&body=${body}`;
+  }
+</script>
 </body>
 </html>
